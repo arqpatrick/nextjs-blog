@@ -97,6 +97,15 @@ Então, bora testar!
 <img  src="https://image.flaticon.com/icons/png/128/2562/2562030.png"  alt="testing"  width="60"/>
 
 
+## 6. CSS
+
+A página index deste exemplo, já possui um `estilo css` nela. Que pode ser estudada olhando o código
+
+```jsx
+<style jsx>{`
+  …
+`}</style>
+```
 
 ---
 
