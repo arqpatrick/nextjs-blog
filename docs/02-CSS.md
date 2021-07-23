@@ -195,6 +195,20 @@ Como resultado, `http://localhost:3000/posts/primeiro-post` deve estar com o est
 
 ### **ESTILOS GLOBAIS**
 
+`Módulos CSS` são úteis para nível de componente
+Já, para aplicação de algum `CSS` em todas as páginas, o NextJS utiliza `CSS Globais`
+
+1. Instale o componente chamado de `App` que lidará com todas as páginas
+
+```sh
+npm run dev
+```
+
+2. Crie um arquivo `pages/_app.js` com o seguinte conteúdo
+
+
+
+
 ---
 
 
