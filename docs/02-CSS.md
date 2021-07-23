@@ -144,6 +144,8 @@ import Layout from '../../components/layout'
   }
 ```
 
+<img  src="https://image.flaticon.com/icons/png/128/2562/2562030.png"  alt="testing"  width="60"/>
+
 ### **ADICIONANDO CSS**
 
 Vamos criar um arquivo com o `CSS` que será responsável pelo estilo dos posts
@@ -179,6 +181,8 @@ export default function Layout({ children }) {
 ```
 
 Como resultado, `http://localhost:3000/posts/primeiro-post` deve estar com o estilo aplicado
+
+<img  src="https://image.flaticon.com/icons/png/128/2562/2562030.png"  alt="testing"  width="60"/>
 
 <img  src="https://image.flaticon.com/icons/png/128/1041/1041728.png"  alt="info"  width="20"/> ****INFORMAÇÃO****
 
@@ -252,6 +256,107 @@ img {
   display: block;
 }
 ```
+
+4. Agora vamos importar este arquivo para dentro de `pages/_app.js`
+
+```js
+import '../styles/global.css'
+
+export default function App({ Component, pageProps }) {
+  return <Component {...pageProps} />
+}
+```
+<img  src="https://image.flaticon.com/icons/png/128/2562/2562030.png"  alt="testing"  width="60"/>
+
+Tudo ocorrendo bem, deve estar vendo uma pequena mudança no estilo das páginas
+
+### **POLIMENTO DE LAYOUT**
+
+Agora devemos polir o estilo e o código de nossa página
+
+### *1. ATUALIZAR* `components/layout.module.css`
+
+Susbstitua o código existente por este
+
+```css
+.container {
+  max-width: 36rem;
+  padding: 0 1rem;
+  margin: 3rem auto 6rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.backToHome {
+  margin: 3rem 0 0;
+}
+```
+
+### *2. CRIAR* `styles/utils.module.css`
+
+Crie com o seguinte conteúdo
+
+```css
+.heading2Xl {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.05rem;
+  margin: 1rem 0;
+}
+
+.headingXl {
+  font-size: 2rem;
+  line-height: 1.3;
+  font-weight: 800;
+  letter-spacing: -0.05rem;
+  margin: 1rem 0;
+}
+
+.headingLg {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin: 1rem 0;
+}
+
+.headingMd {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.borderCircle {
+  border-radius: 9999px;
+}
+
+.colorInherit {
+  color: inherit;
+}
+
+.padding1px {
+  padding-top: 1px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listItem {
+  margin: 0 0 1.25rem;
+}
+
+.lightText {
+  color: #666;
+}
+```
+
+### *3. ATUALIZAR* `components/layout.js`
+
 
 ---
 
