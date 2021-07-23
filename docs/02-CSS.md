@@ -200,7 +200,7 @@ Já, para aplicação de algum `CSS` em todas as páginas, o NextJS utiliza `CSS
 
 1. Instale o componente chamado de `App` que lidará com todas as páginas
 
-```shell
+```console
 npm run dev
 ```
 
