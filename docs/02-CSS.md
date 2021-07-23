@@ -357,12 +357,128 @@ Crie com o seguinte conteúdo
 
 ### *3. ATUALIZAR* `components/layout.js`
 
+Abra `components/layout.js` e cole o código abaixo
+Também mude a `const name = 'Seu Nome'`
+
+```jsx
+import Head from 'next/head'
+import Image from 'next/image'
+import styles from './layout.module.css'
+import utilStyles from '../styles/utils.module.css'
+import Link from 'next/link'
+
+const nome = 'Patrick Kottwitz'
+export const tituloDoSite = 'Website Exemplo Next.js'
+
+export default function Layout({ children, home }) {
+  return (
+    <div className={styles.container}>
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="descrição"
+          content="Aprender como construir um website pessoal com Next.js"
+        />
+        <meta
+          property="og:image"
+          content={`https://og-image.vercel.app/${encodeURI(
+            tituloDoSite
+          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
+        />
+        <meta name="og:title" content={tituloDoSite} />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
+      <header className={styles.header}>
+        {home ? (
+          <>
+            <Image
+              priority
+              src="/image/profile.jpg"
+              className={utilStyles.borderCircle}
+              height={144}
+              width={144}
+              alt={nome}
+            />
+            <h1 className={utilStyles.heading2Xl}>{nome}</h1>
+          </>
+        ) : (
+          <>
+            <Link href="/">
+              <a>
+                <Image
+                  priority
+                  src="/image/profile.jpg"
+                  className={utilStyles.borderCircle}
+                  height={108}
+                  width={108}
+                  alt={nome}
+                />
+              </a>
+            </Link>
+            <h2 className={utilStyles.headingLg}>
+              <Link href="/">
+                <a className={utilStyles.colorInherit}>{nome}</a>
+              </Link>
+            </h2>
+          </>
+        )}
+      </header>
+      <main>{children}</main>
+      {!home && (
+        <div className={styles.backToHome}>
+          <Link href="/">
+            <a>← Voltar para home</a>
+          </Link>
+        </div>
+      )}
+    </div>
+  )
+}
+```
+
+<img  src="https://image.flaticon.com/icons/png/128/891/891447.png"  alt="new"  width="20"/> ****NOVIDADES****
+
+> `og:image` é uma `meta tag` utilizada para descrever o conteúdo de uma página
+> `home` um Prop booleana que irá ajustar o tamanho do título e da imagem
+> Link `Voltar para home` se `home` for `false` (`{!home && (...)}`)
+> Imagens adicionadas com `next/image`, são pré-carregadas com atributo de `priority`
+
+### *ATUALIZAR* `pages/index.js`
+
+Por fim, atualizaremos a página `pages/index.js` substituindo a conteúdo existente pelo seguinte
+
+```jsx
+import Head from 'next/head'
+import Layout, { tituloDoSite } from '../components/layout'
+import utilStyles from '../styles/utils.module.css'
+
+export default function Home() {
+  return (
+    <Layout home>
+      <Head>
+        <title>{tituloDoSite}</title>
+      </Head>
+      <section className={utilStyles.headingMd}>
+        <p>[Sua Própria Introdução]</p>
+        <p>
+          (Este é um website exemplo - você pode construir um site como este no{' '}
+          <a href="https://nextjs.org/learn">nosso tutorial Next.js</a>.)
+        </p>
+      </section>
+    </Layout>
+  )
+}
+```
+
+Atualize `[Sua Própria Introdução]` com sua apresentação e pessoal e pronto
+
+<img  src="https://image.flaticon.com/icons/png/128/2562/2562030.png"  alt="testing"  width="60"/>
 
 ---
 
 
 
-### [` << Início `](../README.md) | [` Ativos, metadados e CSS >> `](docs/02-CSS.md)
+### [` << Início `](../README.md) | [` Pré-renderização e busca de dados >> `](docs/03-PRE.md)
 
  02 
 

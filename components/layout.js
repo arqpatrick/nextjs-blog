@@ -4,8 +4,8 @@ import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 
-const name = 'Patrick Kottwitz'
-export const siteTitle = 'Website Exemplo Next.js'
+const nome = 'Patrick Kottwitz'
+export const tituloDoSite = 'Website Exemplo Next.js'
 
 export default function Layout({ children, home }) {
   return (
@@ -19,10 +19,10 @@ export default function Layout({ children, home }) {
         <meta
           property="og:image"
           content={`https://og-image.vercel.app/${encodeURI(
-            siteTitle
+            tituloDoSite
           )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
         />
-        <meta name="og:title" content={siteTitle} />
+        <meta name="og:title" content={tituloDoSite} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header className={styles.header}>
@@ -30,13 +30,13 @@ export default function Layout({ children, home }) {
           <>
             <Image
               priority
-              src="/images/profile.jpg"
+              src="/image/profile.jpg"
               className={utilStyles.borderCircle}
               height={144}
               width={144}
-              alt={name}
+              alt={nome}
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <h1 className={utilStyles.heading2Xl}>{nome}</h1>
           </>
         ) : (
           <>
@@ -44,17 +44,17 @@ export default function Layout({ children, home }) {
               <a>
                 <Image
                   priority
-                  src="/images/profile.jpg"
+                  src="/image/profile.jpg"
                   className={utilStyles.borderCircle}
                   height={108}
                   width={108}
-                  alt={name}
+                  alt={nome}
                 />
               </a>
             </Link>
             <h2 className={utilStyles.headingLg}>
               <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
+                <a className={utilStyles.colorInherit}>{nome}</a>
               </Link>
             </h2>
           </>
