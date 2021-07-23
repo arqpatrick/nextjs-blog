@@ -478,7 +478,7 @@ Atualize `[Sua Própria Introdução]` com sua apresentação e pessoal e pronto
 
 
 
-### [` << Início `](../README.md) | [` Pré-renderização e busca de dados >> `](docs/03-PRE.md)
+### [` << Início `](../README.md) | [` Pré-renderização e busca de dados >> `](03-PRE.md)
 
  02 
 
