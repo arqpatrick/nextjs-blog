@@ -198,26 +198,66 @@ Como resultado, `http://localhost:3000/posts/primeiro-post` deve estar com o est
 `Módulos CSS` são úteis para nível de componente
 Já, para aplicação de algum `CSS` em todas as páginas, o NextJS utiliza `CSS Globais`
 
-1. Instale o componente chamado de `App` que lidará com todas as páginas
+1. Crie um arquivo `pages/_app.js` e adicione o componente `App`
 
-```console
-npm run dev
+```jsx
+export default function App({ Component, pageProps }) {
+  return <Component {...pageProps} />
+}
 ```
 
-2. Crie um arquivo `pages/_app.js` com o seguinte conteúdo
+<img  src="https://image.flaticon.com/icons/png/128/561/561270.png"  alt="alert"  width="20"/> ****ALERTA!****
+> Para utilizar o componente `App` você deverá reiniciar o servidor `[CTRL+C]` para desligar
+> E para reiniciar:
+> ```console
+> npm run dev
+> ```
 
+<img  src="https://image.flaticon.com/icons/png/128/1041/1041728.png"  alt="info"  width="20"/> ****INFORMAÇÃO****
 
+> Só é possível importar `CSS Global` dentro de `pages/_app.js`, já que afeta todos os elementos da página
 
+### **ADICIONANDO CSS GLOBAL**
+
+1. Crie um diretório na raiz do projeto `styles`
+2. Crie o arquivo `global.css` dentro do diretório `styles`
+3. Agora, em `styles/global.css` adicione o seguinte códiogo `CSS`
+
+```css
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+```
 
 ---
 
 
-<div style="text-align: center">
 
-### [` << Início `](../README.md) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [` Ativos, metadados e CSS >> `](docs/02-CSS.md)
+### [` << Início `](../README.md) | [` Ativos, metadados e CSS >> `](docs/02-CSS.md)
 
-</div>
-
-
-<div style="text-align: right"> 02 </div>
+ 02 
 
