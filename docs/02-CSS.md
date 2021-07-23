@@ -187,12 +187,11 @@ Como resultado, `http://localhost:3000/posts/primeiro-post` deve estar com o est
 >Evitando conflitos e carregando a quantidade mínima de CSS para cada página
 >
 >Exemplo
->```jsx
+>```html
 ><div id="__next">
 ><div class="layout_container__2t4v2">
 ><h1>Título do Primeiro Post</h1>
 >```
->&nbsp;
 
 ### **ESTILOS GLOBAIS**
 
