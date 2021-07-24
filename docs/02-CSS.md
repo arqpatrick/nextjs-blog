@@ -91,10 +91,10 @@ import Link from 'next/link'
   }
 ```
 Tudo está funcionando, mas espero que esteja testando a cada modificação no código. Porque assim é mais fácil localizar algum bug que eventualmente acontecer.
-Vou adotar esse ícone <img  src="https://image.flaticon.com/icons/png/128/2562/2562030.png"  alt="testing"  width="20"/> para sugerir sempre que acho necessário fazer os testes a partir de agora
+Vou adotar esse ícone <img  src="https://image.flaticon.com/icons/png/128/2809/2809495.png"  alt="testing"  width="20"/> para sugerir sempre que acho necessário fazer os testes a partir de agora
 Então, bora testar!
 
-<img  src="https://image.flaticon.com/icons/png/128/2562/2562030.png"  alt="testing"  width="60"/>
+<img  src="https://image.flaticon.com/icons/png/128/2809/2809495.png"  alt="testing"  width="60"/>
 
 
 ## 6. CSS
@@ -144,7 +144,7 @@ import Layout from '../../components/layout'
   }
 ```
 
-<img  src="https://image.flaticon.com/icons/png/128/2562/2562030.png"  alt="testing"  width="60"/>
+<img  src="https://image.flaticon.com/icons/png/128/2809/2809495.png"  alt="testing"  width="60"/>
 
 ### **ADICIONANDO CSS**
 
@@ -182,7 +182,7 @@ export default function Layout({ children }) {
 
 Como resultado, `http://localhost:3000/posts/primeiro-post` deve estar com o estilo aplicado
 
-<img  src="https://image.flaticon.com/icons/png/128/2562/2562030.png"  alt="testing"  width="60"/>
+<img  src="https://image.flaticon.com/icons/png/128/2809/2809495.png"  alt="testing"  width="60"/>
 
 <img  src="https://image.flaticon.com/icons/png/128/1041/1041728.png"  alt="info"  width="20"/> ****INFORMAÇÃO****
 
@@ -266,7 +266,7 @@ export default function App({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
 ```
-<img  src="https://image.flaticon.com/icons/png/128/2562/2562030.png"  alt="testing"  width="60"/>
+<img  src="https://image.flaticon.com/icons/png/128/2809/2809495.png"  alt="testing"  width="60"/>
 
 Tudo ocorrendo bem, deve estar vendo uma pequena mudança no estilo das páginas
 
@@ -356,6 +356,10 @@ Crie com o seguinte conteúdo
 ```
 
 ### *3. ATUALIZAR* `components/layout.js`
+
+Vamos criar uma pasta para imagens dentro da pasta public e colocar uma imagem jpg com nome `perfil.jpg`
+
+`public/image/profile.jpg`
 
 Abra `components/layout.js` e cole o código abaixo
 Também mude a `const name = 'Seu Nome'`
@@ -472,11 +476,13 @@ export default function Home() {
 
 Atualize `[Sua Própria Introdução]` com sua apresentação e pessoal e pronto
 
-<img  src="https://image.flaticon.com/icons/png/128/2562/2562030.png"  alt="testing"  width="60"/>
+<img  src="https://image.flaticon.com/icons/png/128/2809/2809495.png"  alt="testing"  width="60"/>
 
 ---
 
+Agora seguimos para a Pré-renderização e busca de dados, clicando no link abaixo
 
+---
 
 ### [` << Início `](../README.md) | [` Pré-renderização e busca de dados >> `](03-PRE.md)
 
