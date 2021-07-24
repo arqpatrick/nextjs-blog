@@ -119,10 +119,8 @@ Dentro de `posts/pre-rendering.md`, copie e cole:
 
 ```markdown
 ---
-
 title: 'Two Forms of Pre-rendering'
 date: '2020-01-01'
-
 ---
 
 Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.
@@ -135,7 +133,7 @@ Importantly, Next.js lets you **choose** which pre-rendering form to use for eac
 
 Faça o mesmo em `posts/ssg-ssr.md`:
 
-```md
+```markdown
 ---
 title: 'When to Use Static Generation v.s. Server-side Rendering'
 date: '2020-01-02'
