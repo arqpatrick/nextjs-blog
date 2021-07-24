@@ -15,6 +15,7 @@ São servidos a partir do diretório `public` no diretório raiz, tal qual `page
 Baixe a sua foto de perfil ou
 
 <img  src="https://image.flaticon.com/icons/png/128/841/841539.png"  alt="tips"  width="20"/> ****DICA!****
+
 >Se você utilizar o seu endereço `github.com/"usuário".png`, você tem acesso a foto de perfil de usuário :wink:
 
 O NextJS também possui um componente para lidar com imagem, chamado de...&nbsp;&nbsp;&nbsp;...`Image` !!!
@@ -90,12 +91,11 @@ import Link from 'next/link'
     )
   }
 ```
+
 Tudo está funcionando, mas espero que esteja testando a cada modificação no código. Porque assim é mais fácil localizar algum bug que eventualmente acontecer.
-Vou adotar esse ícone <img  src="https://image.flaticon.com/icons/png/128/2809/2809495.png"  alt="testing"  width="20"/> para sugerir sempre que acho necessário fazer os testes a partir de agora
-Então, bora testar!
+
 
 <img  src="https://image.flaticon.com/icons/png/128/2809/2809495.png"  alt="testing"  width="60"/>
-
 
 ## 6. CSS
 
@@ -165,6 +165,7 @@ Coloque esse estilo dentro do `components/layout.module.css`
 <img  src="https://image.flaticon.com/icons/png/128/561/561270.png"  alt="alert"  width="20"/> ****ALERTA!****
 
 > Para utilizar `Módulo CSS`, o nome do arquivo deve terminar com `.module.css`
+>
 > Utilizamos o neste caso `layout.module.css`, mas poderia ser `qualquerNome.module.css`
 
 
@@ -187,7 +188,9 @@ Como resultado, `http://localhost:3000/posts/primeiro-post` deve estar com o est
 <img  src="https://image.flaticon.com/icons/png/128/1041/1041728.png"  alt="info"  width="20"/> ****INFORMAÇÃO****
 
 > O NextJS cria automaticamente nomes de classes únicos
+>
 > É uma segurança de que não haverá documentos gerados eventualemnte com o mesmo nome de classe.
+>
 >Evitando conflitos e carregando a quantidade mínima de CSS para cada página
 >
 >Exemplo
@@ -443,8 +446,11 @@ export default function Layout({ children, home }) {
 <img  src="https://image.flaticon.com/icons/png/128/891/891447.png"  alt="new"  width="20"/> ****NOVIDADES****
 
 > `og:image` é uma `meta tag` utilizada para descrever o conteúdo de uma página
+>
 > `home` um Prop booleana que irá ajustar o tamanho do título e da imagem
+>
 > Link `Voltar para home` se `home` for `false` (`{!home && (...)}`)
+>
 > Imagens adicionadas com `next/image`, são pré-carregadas com atributo de `priority`
 
 ### *ATUALIZAR* `pages/index.js`
