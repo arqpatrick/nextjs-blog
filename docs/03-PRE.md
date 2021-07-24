@@ -109,7 +109,7 @@ Neste exemplo, adicionaremos os dados das postagens do blog utilizando `arquivos
 >
 > Possivelmente, no futuro, alguem precisará fazer manutenção no código. Como não temos como prever quando e quem será essa pessoa (assim como você pode pegar o código escrito por outra pessoa), as boas práticas adotam essa idéia de sempre buscar por criar variáveis, componentes, arquivos, pastas, banco de dados, etc com palavras em inglês
 
-#### "BORA CODAR"
+### "BORA CODAR"
 
 + Crie um novo diretório na pasta raiz chamada `posts` 
     + Obs.: Não é a mesma de antes `pages/posts`, ok!
@@ -135,8 +135,8 @@ Faça o mesmo em `posts/ssg-ssr.md`:
 
 ```markdown
 ---
-title: 'When to Use Static Generation v.s. Server-side Rendering'
-date: '2020-01-02'
+titulo: 'When to Use Static Generation v.s. Server-side Rendering'
+data: '2020-01-02'
 ---
 
 We recommend using **Static Generation** (with and without data) whenever possible because your page can be built once and served by CDN, which makes it much faster than having a server render the page on every request.
@@ -153,6 +153,45 @@ You should ask yourself: "Can I pre-render this page **ahead** of a user's reque
 On the other hand, Static Generation is **not** a good idea if you cannot pre-render a page ahead of a user's request. Maybe your page shows frequently updated data, and the page content changes on every request.
 
 In that case, you can use **Server-Side Rendering**. It will be slower, but the pre-rendered page will always be up-to-date. Or you can skip pre-rendering and use client-side JavaScript to populate data.
+```
+
+<img  src="https://image.flaticon.com/icons/png/128/3655/3655586.png"  alt="info"  width="20"/> ****ADENDO****
+
+> Nestes exemplos, os arquivos `markdown` possuem uma seção de `metadados`
+> ```yaml
+> ---
+> titulo: 'Qualquer Título'
+> data: 'DD-MM-AAAA'
+> ---
+> ```
+> `title` e `date` neste caso, é `YAML Front Matter [YAML - Yet Another Markup Language/Mais Outra Linguágem de Marcação]` 
+>> Exemplo
+>>
+>> ```yaml
+>> --- # em bloco
+>> nome: Patrick
+>> idade: 35
+>> --- # em linha
+>> {nome: Patrick, idade: 23}
+>> ```
+>>
+> Que pode ser analisado usando a biblioteca [`gray-matter`](https://github.com/jonschlinkert/gray-matter)
+
+### *ANALISANDO OS DADOS DO BLOG* `getStaticProps`
+
+Queremos que:
+
++ Analise cada arquivo `markdown` e obtenha `titulo`, `data` e nome do arquivo que será usado como `id`, gerando a `URL` da postagem
++ Liste os dados da página de índice, classifacod por data
+
+Para isso, precisamos implementar `getStaticProps`
+
+### *IMPLEMENTANDO* `getStaticProps`
+
+1. Instale a `gray-matter` para análisarmos os metadados em cada arquivo
+
+```console
+npm install gray-matter
 ```
 
 ---
