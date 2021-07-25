@@ -2,10 +2,10 @@ import Head from 'next/head'
 import Layout, { tituloDoSite } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 //------------
-import { getSortedPostsData } from '../lib/posts'
+import { pegarDadosDePostagensClassificadas } from '../lib/posts'
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData()
+  const allPostsData = pegarDadosDePostagensClassificadas()
   return {
     props: { allPostsData }
   }

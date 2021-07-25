@@ -194,8 +194,108 @@ Para isso, precisamos implementar `getStaticProps`
 npm install gray-matter
 ```
 
+<img  src="https://image.flaticon.com/icons/png/128/2797/2797387.png"  alt="attention"  width="20"/> ****ATENÇÃO!!!****
+
+> Lembrar de sempre fechar o servidor `[CTRL+C]` antes de instalar qualquer lib!
+>
+> Para reiniciar o servidor após a instalação console: `npm run dev`
+
+2. Criaremos um diretório na raiz (nível superior), chamado de `lib`
+3. Dentro dessa pasta `lib`, criaremos um arquivo JS chamado `posts.js` e colaremos o conteúdo a baixo
+
+```jsx
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
+
+const diretorioDePosts = path.join(process.cwd(), 'posts')
+
+export function pegarDadosDePostagensClassificadas() {
+  // Pega o nome dos arquivos dentro de /posts
+  const nomesDosArquivos = fs.readdirSync(diretorioDePosts)
+  const dadosDeTodosPosts = nomesDosArquivos.map(nomeDoArquivo => {
+    // Remove o ".md" do nome do arquivo para obeter a id
+    const id = nomeDoArquivo.replace(/\.md$/, '')
+
+    // Ler o arquivo markdown como uma string
+    const caminhoCompleto = path.join(diretorioDePosts, nomeDoArquivo)
+    const conteudosDoArquivo = fs.readFileSync(caminhoCompleto, 'utf8')
+
+    // Usa o gray-matter para analisar a seção de metadados da postagem
+    const resultadoDoMatter = matter(conteudosDoArquivo)
+
+    // Combinar os dados com o id
+    return {
+      id,
+      ...resultadoDoMatter.data
+    }
+  })
+  // Classificar postagens por data de publicação (dia)
+  return dadosDeTodosPosts.sort(({ dia: a }, { dia: b }) => {
+    if (a < b) {
+      return 1
+    } else if (a > b) {
+      return -1
+    } else {
+      return 0
+    }
+  })
+}
+```
+
+Estamos exportando essa função como `pegarDadosDePostagensClassificadas`, e vamos chamá-la com `getStaticProps` dentro de `pages/index.js` para acessar as postagens do blog
+
+```jsx
+import { pegarDadosDePostagensClassificadas } from '../lib/posts'
+
+export async function getStaticProps() {
+  const allPostsData = pegarDadosDePostagensClassificadas()
+  return {
+    props: { allPostsData }
+  }
+}
+```
+
+Agora vamos passar essas postagens para a `Home` através de `export default function Home({ allPostsData })`
+
+```jsx
+export default function Home({ allPostsData }) {
+  return (
+    <Layout home>
+      <Head>
+        <title>{tituloDoSite}</title>
+      </Head>
+
+     
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        <h2 className={utilStyles.headingLg}>Blog</h2>
+        <ul className={utilStyles.list}>
+          {allPostsData.map(({ id, dia, titulo }) => (
+            <li className={utilStyles.listItem} key={id}>
+              {titulo}
+              <br />
+              {id}
+              <br />
+              {dia}
+            </li>
+          ))}
+        </ul>
+      </section>
+    </Layout>
+  )
+}
+```
+
+Se tudo estiver certo, em `http://localhost:3000` veremos as postagens do blog listadas por ordem de data de postagem
+
+<img  src="https://image.flaticon.com/icons/png/128/2809/2809495.png"  alt="testing"  width="60"/>
+
 ---
 
-### [` <<< Início `](../README.md) | [` << Pré-renderização e busca de dados `](02-CSS.md) | [` Pré-renderização e busca de dados >> `](04-ROTAS.md)
+Aqui foi abordado a busca de dados através de `getStaticProps`
+
+---
+
+### [` <<< Início `](../README.md) | [` << Pré-renderização e busca de dados `](02-CSS.md) | [` Rotas Dinâmicas >> `](04-ROTAS.md)
 
  03 
