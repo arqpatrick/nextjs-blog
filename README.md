@@ -1,6 +1,6 @@
 # Criação de um Blog com Next.js
 
-A idéia aqui é basicamente construir um blog com Next.js.
+A idéia aqui é basicamente construir um blog com Next.js, com intuito de aprendizado pessoal e repassar conhecimento
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/arqpatrick/nextjs-blog/main/assets/lines/water.png)
 
@@ -8,26 +8,26 @@ A idéia aqui é basicamente construir um blog com Next.js.
 
 ## Conteúdo
 
-+ Avisos Iniciais
-  + [Motivo](#motivo)
-  + [Para quem?](#para-quem)
-  + [First of all](#first-of-all)
-  + [Status de produção](#status-de-produção)
-  + [Objetivos](#objetivos)
-  + [Pré-requisitos](#pré-requisitos)
-  + [Notas](#notas)
-  + [Contribuição](#contribuição)
-  + [Sobre](#sobre)
-  + [Referências](#referências)
-  + [Indicações](#Indicações)
-+ Instalações Necessárias
-+ Iniciando o Projeto
-+ Configurando e Navegando entre Páginas
-+ Ativos, Metadados e Css
-+ Pré-renderização e Busca de Dados
-+ Rotas Dinâmicas
-+ Rotas API
-+ Implantando o Aplicativo
++ [**Avisos Iniciais**](#avisos-iniciais)
+  + [*Motivo*](#motivo)
+  + [*Para quem?*](#para-quem)
+  + [*First of all*](#first-of-all)
+  + [*Status de produção*](#status-de-produção)
+  + [*Objetivos*](#objetivos)
+  + [*Pré-requisitos*](#pré-requisitos)
+  + [*Notas*](#notas)
+  + [*Contribuição*](#contribuição)
+  + [*Sobre*](#sobre)
+  + [*Referências*](#referência**s)
+  + [*Indicações*](#Indicações)
++ **Instalações Necessárias**
++ **Iniciando o Projeto**
++ **Configurando e Navegando entre Páginas**
++ **Ativos, Metadados e Css**
++ **Pré-renderização e Busca de Dados**
++ **Rotas Dinâmicas**
++ **Rotas API**
++ **Implantando o Aplicativo**
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/arqpatrick/nextjs-blog/main/assets/lines/water.png)
 
@@ -90,16 +90,25 @@ Os conhecimentos desejados são **html**, **css** e **JS<sup>5</sup>**. Mesmo as
 > <small>Técnica que consiste em "explicar" o seu código para um pato de borracha. Auxilia no entendimento do código e na solução de possíveis problemas</small>
 
 **Html<sup>2</sup>**<br>
-> <small>Técnica que consiste em "explicar" o seu código para um pato de borracha. Auxilia no entendimento do código e na solução de possíveis problemas</small>
+> <small>HiperText Markup Language, exatamente isso. Uma linguágem de marcação de hipertexto. É através dessa marcação que os navegadores interpretam as informações para o usuário. Com ela que construimos as páginas web</small>
 
 **Css<sup>3</sup>**<br>
-> <small>Técnica que consiste em "explicar" o seu código para um pato de borracha. Auxilia no entendimento do código e na solução de possíveis problemas</small>
+> <small>Cansei de Ser Sexy... :smiley: Brincadeira, não cansei não...<br> Cascading Style Sheets, é o que adiciona estilo na web. Com css fazemos a web não ficar com a aparência de um dicionário Aurélio</small>
 
 **Next.js<sup>4</sup>**<br>
-> <small>Técnica que consiste em "explicar" o seu código para um pato de borracha. Auxilia no entendimento do código e na solução de possíveis problemas</small>
+> <small>Um **framework**<sup>6</sup> **React**<sup>7</sup> para desenvolvimento **front-end**<sup>8</sup>. :rofl: </small>
 
 **JS<sup>5</sup>**<br>
-> <small>Técnica que consiste em "explicar" o seu código para um pato de borracha. Auxilia no entendimento do código e na solução de possíveis problemas</small>
+> <small>JavaScript é uma linguagem de programação, fazendo trisal com HTML e CSS, como as principais tecnologias web</small>
+
+**Framework<sup>6</sup>**<br>
+> <small>Basicamente, bem basicamente mesmo, é a estrutura que une códigos para "dar vida" a aplicação</small>
+
+**React<sup>7</sup>**<br>
+> <small>React.js é uma biblioteca JavaScript desenvolvida pelo ***Facebook*** para "lidar" com o *front-end*</small>
+
+**Front-end<sup>8</sup>**<br>
+> <small>JavaScript é uma linguagem de programação, fazendo trisal com HTML e CSS, como as principais tecnologias web</small>
 
 #### <div float align="right">[:top:](#conteúdo)</div>
 
